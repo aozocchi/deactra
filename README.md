@@ -43,7 +43,7 @@ irm https://raw.githubusercontent.com/aozocchi/deactra/main/install.ps1 | iex
 ## CLI options
 
 ```text
-deactra CASH_FLOW [CASH_FLOW ...] -t YEARS [YEARS ...]
+deactra CASH_FLOW -t YEARS
         [--guess RATE]
         [--max-iterations N]
         [--rate-tolerance VALUE]
