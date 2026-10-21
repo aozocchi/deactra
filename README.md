@@ -4,9 +4,9 @@
 
 Deactra solves for the annual effective interest rate `i` that makes the net present value of a set of cash flows equal to zero:
 
-\[
+$$
 \sum_{k=1}^{n} CF_k(1+i)^{-t_k}=0, \qquad i>-1.
-\]
+$$
 
 It uses a safeguarded Newton-Raphson method and can fall back to bisection when it finds a sign-changing bracket. It also reports common equivalent actuarial rates. Deactra requires Python 3.10+ and has no third-party runtime dependencies.
 
@@ -18,7 +18,7 @@ Cash-flow values are positional arguments; `-t` / `--times` supplies the matchin
 deactra -1000 600 600 -t 0 1 2
 ```
 
-Your requested example is also supported:
+Example with a custom cash-flow schedule:
 
 ```bash
 deactra -1000 2426 2093 300 -t 9 2 3 7
@@ -96,16 +96,16 @@ Examples:
 
 ```bash
 # Print iteration details
- deactra -1000 600 600 -t 0 1 2 --verbose
+deactra -1000 600 600 -t 0 1 2 --verbose
 
 # Report roots detected by sign-change scanning
- deactra -1000 600 600 -t 0 1 2 --roots
+deactra -1000 600 600 -t 0 1 2 --roots
 
 # JSON output for scripts
- deactra -1000 600 600 -t 0 1 2 --json
+deactra -1000 600 600 -t 0 1 2 --json
 
 # Run as a Python module (also works after installation)
- python -m deactra -1000 600 600 -t 0 1 2
+python -m deactra -1000 600 600 -t 0 1 2
 ```
 
 Run `deactra` without arguments to use interactive input, or `deactra --help` for the full options.
