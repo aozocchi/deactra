@@ -26,55 +26,19 @@ deactra -1000 2426 2093 300 -t 9 2 3 7
 
 In that command, `-1000` is paired with time `9`, `2426` with time `2`, and so on. Double-check that this pairing reflects the intended cash-flow schedule before interpreting the result.
 
-## Install for development
+## Installation
 
-### Linux / macOS (Bash or Zsh)
+### Linux and macOS
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -e ".[test]"
-deactra --help
-```
-
-### Linux / macOS (Fish)
-
-```fish
-python3 -m venv .venv
-source .venv/bin/activate.fish
-python -m pip install -e ".[test]"
-deactra --help
+curl -fsSL https://raw.githubusercontent.com/aozocchi/deactra/main/install.sh | bash
 ```
 
 ### Windows (PowerShell)
 
 ```powershell
-py -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install -e ".[test]"
-deactra --help
+irm https://raw.githubusercontent.com/aozocchi/deactra/main/install.ps1 | iex
 ```
-
-If PowerShell blocks activation scripts, use Command Prompt instead:
-
-```bat
-.venv\Scripts\activate.bat
-python -m pip install -e ".[test]"
-deactra --help
-```
-
-Once the environment is activated and the package is installed, the command is the same on Linux, Windows, and macOS: `deactra`. Windows creates a `deactra.exe` console launcher, which PowerShell and Command Prompt can resolve from the name `deactra`.
-
-### Install as a user-level command
-
-If you want `deactra` available in regular terminals without activating this repository's virtual environment, install it with [pipx](https://pipx.pypa.io/):
-
-```bash
-pipx install .
-deactra --help
-```
-
-Run this from the repository root after installing pipx and ensuring its application directory is on `PATH`. Use the environment-based method above for development; use pipx for an isolated command-line installation.
 
 ## CLI options
 
